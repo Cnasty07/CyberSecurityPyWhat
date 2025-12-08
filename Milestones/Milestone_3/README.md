@@ -42,7 +42,8 @@ Make our contribution to pyWhat. From Milestone 2 we have:
 
 ### Requirements
 
-We need to  
+We need to be able to successfully complete a cycle of input to output through python using pyWhat.
+
 
 ### Design
 
@@ -55,13 +56,14 @@ We need to
 ### Implementation
 
 - Version Control: Github
-
+- Github Link:
 
 ### Testing
 
 We plan to do unit testing on the functions.
 1. Test the wrapper for input validation and sanitation.
-2. Test the wrapper for 
+2. Test the wrapper for functionality.
+3. 
 
 ## Conclusion
 

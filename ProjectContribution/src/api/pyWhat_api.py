@@ -1,8 +1,10 @@
 import os
 from typing import Dict, List, Optional, Union
 
-from pywhat import printer, what, helper, identifier
-
+from pywhat import what
+from pywhat.printer import Printing
+from pywhat import Filter , Distribution , Identifier 
+from pywhat.what import main, What_Object , create_filter
 
 # PyWhat API
 class  PyWhatAPI:
@@ -18,6 +20,11 @@ class  PyWhatAPI:
     :type formatting: dict
     :return: PyWhatAPI instance
     """
+    _filters = {
+        "rarity": "",
+        "include_tags": [],
+        "exclude_tags": []
+    }
     
     def __init__(self, filters: Dict, sorting: Dict, exporting: Dict, formatting: Dict) -> None:
         self.filters = filters
@@ -30,7 +37,8 @@ class  PyWhatAPI:
         """Start a new query into a resource.
         :param self: Description
         """
-        pass
+        text_input = '0x396343362be2A4dA1cE0C1C210945346fb82Aa49'
+        self.pwhat.main(text_input = text_input)
 
     def print_format(self, format_option) -> None:
         """Print the results in a formatted way.
@@ -40,8 +48,10 @@ class  PyWhatAPI:
         """
         pass
 
+
 def main():
-    pass
+    api = PyWhatAPI(filters={}, sorting={}, exporting={}, formatting={})
+    api.new_query()
 
 if __name__ == "__main__":
     main()

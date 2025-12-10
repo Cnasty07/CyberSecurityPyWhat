@@ -1,6 +1,6 @@
 # -- pyWhat Wrapper Class --
-#   INFO: Wrapper around pyWhat functionality for easier integration
-#      -- This one models the what.py structure more closely
+#      -- Wrapper around pyWhat functionality for easier integration
+#      -- This one models the what.py structure strictly
 
 import os
 from typing import Optional
@@ -43,7 +43,12 @@ class pyWhatWrapper(What_Object):
         :return: A pyWhat Filter object
         :rtype: Filter
         """
-        py_filter = create_filter(rarity, include, exclude)
+        py_filter: Filter
+        try:
+            py_filter = create_filter(rarity, include, exclude)
+        except Exception as e:
+            print(f"Error creating filter: {e}")
+            py_filter = create_filter(None, None, None)
         return py_filter
 
     def identify(self, text_input: str) -> dict:

@@ -1,4 +1,5 @@
 from . import options
+from .options import StandardOption , LooseOption , StrictOption
 from . import wrapper_interface
 from .wrapper_interface import pyWhatInterface
 

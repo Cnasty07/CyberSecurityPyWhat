@@ -1,3 +1,5 @@
 .env
 /ProjectFork/
 /pyWhatRef/*
+.vscode
+*.pyc

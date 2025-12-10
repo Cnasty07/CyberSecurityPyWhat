@@ -53,6 +53,41 @@ We need to be able to successfully complete a cycle of input to output through p
 4. Add class methods that directly call to modules like Printer, Identifier , Filter.
 5. 
 
+```mermaid
+classDiagram
+    class What_Object {
+        +__init__(distribution)
+        +what_is_this(text, only_text, key, reverse, boundaryless, include_filenames) dict
+    }
+
+    class main {
+        +main(**kwargs)
+    }
+
+    class print_tags {
+        +print_tags(ctx, opts, value)
+    }
+
+    class print_version {
+        +print_version(ctx, opts, value)
+    }
+
+    class create_filter {
+        +create_filter(rarity, include, exclude)
+    }
+
+    class get_text {
+        +get_text(ctx, opts, value)
+    }
+
+    main --> print_tags : uses
+    main --> print_version : uses
+    main --> create_filter : uses
+    main --> get_text : uses
+    main --> What_Object : creates
+    What_Object --> identifier.Identifier : uses
+```
+
 ### Implementation
 
 - Version Control: Github
@@ -63,7 +98,7 @@ We need to be able to successfully complete a cycle of input to output through p
 We plan to do unit testing on the functions.
 1. Test the wrapper for input validation and sanitation.
 2. Test the wrapper for functionality.
-3. 
+3. a
 
 ## Conclusion
 
